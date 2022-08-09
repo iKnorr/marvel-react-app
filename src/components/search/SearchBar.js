@@ -1,30 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from 'react-icons/fa';
 
-import "./SearchBar.css";
+import styles from './SearchBar.module.scss';
 
-const SearchBar = (props) => {
-  const [term, setTerm] = useState("");
+const SearchBar = props => {
+  const [term, setTerm] = useState('');
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = e => {
     e.preventDefault();
 
     props.onSubmit(term);
 
-    setTerm("");
+    setTerm('');
   };
 
   return (
-    <div className="search-bar">
-      <form onSubmit={onSubmitHandler}>
+    <div className={styles.search_bar}>
+      <form className={styles.form} onSubmit={onSubmitHandler}>
         <input
+          className={styles.input}
           type="text"
           value={term}
           placeholder={props.placeholder}
-          onChange={(e) => setTerm(e.target.value)}
+          autoFocus
+          onChange={e => setTerm(e.target.value)}
         />
-        <button className="btn-search">
+        <button className={styles.btn_search}>
           <FaSearch />
         </button>
       </form>

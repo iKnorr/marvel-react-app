@@ -2,11 +2,17 @@
   background-color: #141414;
 }
 
-.main-container {
+.main_container {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, 316px);
   justify-content: center;
+}
+
+.header {
+  font-size: 4rem;
+  text-align: center;
+  padding: 3rem;
 }
 
 .loading {
@@ -15,40 +21,48 @@
   font-size: 5rem;
 }
 
-.link-character {
+.link_comic {
   text-decoration: none;
 }
 
-.img-character {
-  height: 250px;
-  width: 250px;
+.img_comic {
+  height: 450px;
+  width: 300px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   margin: 1rem;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-  border: solid 7px goldenrod;
-  border-radius: 50%;
-  transition: ease 0.5s;
+  // border-radius: 50%;
+  overflow: hidden;
+  border: solid 2px goldenrod;
+}
 
+.img_comic img {
+  // border-radius: 50%;
+  // transform: scale(1);
+  transition: ease-in-out 0.5s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 }
 
-.character-name {
+.comic_name {
   margin: 2rem;
   font-family: 'Bangers', cursive;
   text-align: center;
-  color: white;
-  font-size: 2.4rem;
+  color: #ffffff;
+  font-size: 2rem;
   text-shadow: 7px 1px 4px rgba(0, 0, 0, 0.8);
+  &:hover {
+    color: #e5e5e5;
+  }
 }
 
-.error-message {
+.error_message {
   text-align: center;
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #ed171e;
   }
   p {

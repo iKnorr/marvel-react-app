@@ -1,16 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import "./index.css";
-import App from "./App";
-import Characters from "./components/characters/Characters";
-import Character from "./components/character/Character";
-import Comics from "./components/comics/Comics";
-import Home from "./components/home/Home";
+import './index.module.scss';
+import App from './App';
+import Characters from './components/characters/Characters';
+import Character from './components/character/Character';
+import Comics from './components/comics/Comics';
+import Comic from './components/comic/Comic';
+import Home from './components/home/Home';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -20,10 +21,11 @@ root.render(
           <Route path="/characters" element={<Characters />}></Route>
           <Route path="/characters/:characterId" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
+          <Route path="/comics/:comicsId" element={<Comic />} />
           <Route
             path="*"
             element={
-              <main style={{ padding: "5rem" }}>
+              <main style={{ padding: '5rem' }}>
                 <h1>404 Error 😱</h1>
                 <h1>Page not found</h1>
               </main>

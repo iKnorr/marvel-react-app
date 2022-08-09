@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./Footer.modules.css";
+import './Footer.module.scss';
 
 const Footer = () => {
-  return <footer className="footer">Footer</footer>;
+  return (
+    <footer className="footer">Data provided by Marvel. © 2022 MARVEL</footer>
+  );
 };
 
 export default Footer;
