@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link, useParams, useLocation } from 'react-router-dom';
 
-import ContainerPadding from '../ui/ContainerPadding';
+import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 
 const Character = () => {
   let params = useParams();

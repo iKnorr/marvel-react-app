@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContainerPadding from '../ui/ContainerPadding';
+import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 import styles from './Home.module.scss';
 
 const Home = () => {

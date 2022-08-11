@@ -1,10 +1,12 @@
 import React from 'react';
 
-import './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className="footer">Data provided by Marvel. © 2022 MARVEL</footer>
+    <footer className={styles.footer}>
+      Data provided by Marvel. © 2022 MARVEL
+    </footer>
   );
 };
 

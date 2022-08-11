@@ -4,11 +4,11 @@ import { Outlet } from 'react-router-dom';
 
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import './App.module.scss';
+import styles from './App.module.scss';
 
 const App = () => {
   return (
-    <div>
+    <div className={styles.flex_wrapper}>
       <Navbar />
       <Outlet />
       <Footer />

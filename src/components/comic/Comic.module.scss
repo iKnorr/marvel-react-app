@@ -1,0 +1,25 @@
+.container_comic {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.comic_info_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.creators {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 0;
+}
+
+.title {
+  padding: 0 0 1rem 0;
+}
