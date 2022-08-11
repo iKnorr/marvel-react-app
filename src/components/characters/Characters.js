@@ -8,6 +8,7 @@ const Characters = () => {
   const imgSize = 'standard_fantastic';
   const defaultDisplay = 'hulk';
   const pageDirectory = '/characters/';
+  const placeholder = "Enter a Character's name";
 
   return (
     <DisplayContent
@@ -16,6 +17,7 @@ const Characters = () => {
       imgSize={imgSize}
       defaultDisplay={defaultDisplay}
       pageDirectory={pageDirectory}
+      placeholder={placeholder}
     ></DisplayContent>
   );
 };

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
+import Button from '../ui/button/Button';
 import styles from './Comic.module.scss';
 
 const Comic = () => {
@@ -25,11 +26,12 @@ const Comic = () => {
   return (
     <ContainerPadding>
       <Link to="/comics">
-        <button>Back</button>
+        <Button title="Back" />
       </Link>
       <div className={styles.container_comic}>
         {/* <h1>{params.comicId}</h1> */}
         <img
+          className={styles.img_comic}
           src={`${state.thumbnail.path}/portrait_uncanny.${state.thumbnail.extension}`}
           alt="charc_img"
         ></img>

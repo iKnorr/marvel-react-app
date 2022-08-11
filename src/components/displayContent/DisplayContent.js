@@ -17,7 +17,9 @@ const DisplayContent = props => {
   let contentList = (
     <div className={styles.error_message}>
       <h2>No Results found</h2>
-      <p>Try again by searching for something like Captain, Spider or Hulk</p>
+      <p>
+        Try again by searching for something like Amazing, Spider or Captain
+      </p>
     </div>
   );
 
@@ -34,9 +36,9 @@ const DisplayContent = props => {
               >
                 <div
                   className={
-                    props.pageDirectory === '/comics/'
-                      ? styles.img_comic
-                      : styles.img_result
+                    props.pageDirectory === '/characters/'
+                      ? styles.img_result
+                      : styles.img_comic
                   }
                 >
                   <img
@@ -45,9 +47,9 @@ const DisplayContent = props => {
                   ></img>
                 </div>
                 <h2 className={styles.result_name}>
-                  {props.pageDirectory === '/comics/'
-                    ? result.title
-                    : result.name}
+                  {props.pageDirectory === '/characters/'
+                    ? result.name
+                    : result.title}
                 </h2>
               </Link>
             </div>
@@ -66,7 +68,7 @@ const DisplayContent = props => {
   return (
     <ContainerPadding>
       <Header header={props.header}>
-        <SearchBar onSubmit={search} placeholder="Enter a Character's Name" />
+        <SearchBar onSubmit={search} placeholder={props.placeholder} />
         {content}
       </Header>
     </ContainerPadding>

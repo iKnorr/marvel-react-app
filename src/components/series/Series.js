@@ -2,13 +2,13 @@ import React from 'react';
 
 import DisplayContent from '../displayContent/DisplayContent';
 
-const Comics = () => {
-  const header = 'MARVEL COMICS';
-  const resultsUrl = '/comics?titleStartsWith';
+const Series = () => {
+  const header = 'MARVEL COMIC-SERIES';
+  const resultsUrl = '/series?titleStartsWith';
   const imgSize = 'portrait_uncanny';
   const defaultDisplay = 'avengers';
-  const pageDirectory = '/comics/';
-  const placeholder = 'Enter a Comic';
+  const pageDirectory = '/series/';
+  const placeholder = 'Enter a Comic-Series';
 
   return (
     <DisplayContent
@@ -22,4 +22,4 @@ const Comics = () => {
   );
 };
 
-export default Comics;
+export default Series;

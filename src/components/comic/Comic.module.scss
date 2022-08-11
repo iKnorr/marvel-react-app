@@ -1,7 +1,9 @@
 .container_comic {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2rem;
+
   p {
     font-size: 1.2rem;
   }
@@ -13,9 +15,14 @@
   padding: 0 2rem;
 }
 
+.img_comic {
+  height: auto;
+  width: 400px;
+}
+
 .creators {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 50px;
   grid-template-columns: 1fr 1fr;
   padding: 1rem 0;
 }
