@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 import styles from './CharacterDetail.module.scss';
@@ -23,6 +23,7 @@ const CharacterDetail = () => {
       <div className={styles.container_character}>
         <div className={styles.img_character_detail}>
           <img
+            alt="img_character"
             src={`${state.thumbnail.path}/portrait_uncanny.${state.thumbnail.extension}`}
           />
         </div>
@@ -38,12 +39,16 @@ const CharacterDetail = () => {
           {/* {charList} */}
           <div className={styles.links}>
             <a
+              alt="link_detail"
+              rel="noreferrer"
               href="http://marvel.com/characters/25/hulk?utm_campaign=apiRefutm_source=b37388fcfae95bf1869fe48184712196"
               target="_blank"
             >
               Detail
             </a>
             <a
+              alt="link_detail"
+              rel="noreferrer"
               href="http://marvel.com/comics/characters/1017098/hulk_has?utm_campaign=apiRefutm_source=b37388fcfae95bf1869fe48184712196"
               target="_blank"
             >

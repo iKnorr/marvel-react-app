@@ -10,8 +10,8 @@ import Character from './components/character/CharacterDetail';
 import Comics from './components/comics/Comics';
 import Comic from './components/comic/Comic';
 import Home from './components/home/Home';
-import Series from './components/series/Series';
-import SeriesComic from './components/SeriesComic/SeriesComic';
+// import Series from './components/series/Series';
+// import SeriesComic from './components/SeriesComic/SeriesComic';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

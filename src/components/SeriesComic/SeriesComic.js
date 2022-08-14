@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 
-import api from '../../api';
-import MD5 from 'crypto-js/md5';
+// import api from '../../api';
+// import MD5 from 'crypto-js/md5';
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 
-const PrivateKey = 'ce49a66e2a5a94deffac5d3cd9ae15a63630adb2';
-const PublicKey = 'b37388fcfae95bf1869fe48184712196';
-const ts = Number(new Date());
-const hash = MD5(ts + PrivateKey + PublicKey);
+// const PrivateKey = 'ce49a66e2a5a94deffac5d3cd9ae15a63630adb2';
+// const PublicKey = 'b37388fcfae95bf1869fe48184712196';
+// const ts = Number(new Date());
+// const hash = MD5(ts + PrivateKey + PublicKey);
 
 const SeriesComic = props => {
   let { state } = useLocation();

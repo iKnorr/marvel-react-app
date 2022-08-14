@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
-import Button from '../ui/button/Button';
+// import Button from '../ui/button/Button';
 import styles from './Comic.module.scss';
 
 const Comic = () => {

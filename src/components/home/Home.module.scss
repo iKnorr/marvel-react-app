@@ -20,4 +20,13 @@
 
 .wrapper_header {
   padding: 5rem;
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #e5e5e5;
+    text-decoration: none;
+  }
 }
