@@ -25,11 +25,10 @@ const Comic = () => {
 
   return (
     <ContainerPadding>
-      <Link to="/comics">
+      {/* <Link to="/comics">
         <Button title="Back" />
-      </Link>
+      </Link> */}
       <div className={styles.container_comic}>
-        {/* <h1>{params.comicId}</h1> */}
         <img
           className={styles.img_comic}
           src={`${state.thumbnail.path}/portrait_uncanny.${state.thumbnail.extension}`}

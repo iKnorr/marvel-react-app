@@ -9,7 +9,7 @@ const Home = () => {
       <div className={styles.container_home}>
         <div className={styles.wrapper_header}>
           <h1>MarvelComicDB</h1>
-          <p>Find all the information about Characters, Comics and Series</p>
+          <p>Find all the information about Characters and Comics</p>
         </div>
       </div>
     </ContainerPadding>

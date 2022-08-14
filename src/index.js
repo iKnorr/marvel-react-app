@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.module.scss';
 import App from './App';
 import Characters from './components/characters/Characters';
-import Character from './components/character/Character';
+import Character from './components/character/CharacterDetail';
 import Comics from './components/comics/Comics';
 import Comic from './components/comic/Comic';
 import Home from './components/home/Home';
@@ -24,8 +24,8 @@ root.render(
           <Route path="/characters/:characterId" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
           <Route path="/comics/:comicsId" element={<Comic />} />
-          <Route path="/series" element={<Series />} />
-          <Route path="/series/:seriesId" element={<SeriesComic />} />
+          {/* <Route path="/series" element={<Series />} />
+          <Route path="/series/:seriesId" element={<SeriesComic />} /> */}
           <Route
             path="*"
             element={

@@ -1,6 +1,18 @@
 .footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 4rem;
+  margin: 1rem 0;
+}
+
+.links {
+  margin: 1rem 0;
+
+  a {
+    padding: 0.7rem;
+    color: white;
+    text-decoration: none;
+  }
 }

@@ -37,9 +37,9 @@ const Navbar = () => {
           >
             Comics
           </NavLink>
-          <NavLink to="/series" className={linkIsActive}>
+          {/* <NavLink to="/series" className={linkIsActive}>
             Comic-Series
-          </NavLink>
+          </NavLink> */}
         </div>
       </nav>
     </React.Fragment>
