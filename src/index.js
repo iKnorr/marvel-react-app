@@ -5,11 +5,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './index.module.scss';
 import App from './App';
-import Characters from './components/characters/Characters';
-import Character from './components/character/CharacterDetail';
-import Comics from './components/comics/Comics';
-import Comic from './components/comic/Comic';
-import Home from './components/home/Home';
+import Characters from './pages/characters/Characters';
+import Character from './pages/characterDetail/CharacterDetail';
+import Comics from './pages/comics/Comics';
+import Comic from './pages/comicDetail/ComicDetail';
+import Home from './pages/home/Home';
 // import Series from './components/series/Series';
 // import SeriesComic from './components/SeriesComic/SeriesComic';
 

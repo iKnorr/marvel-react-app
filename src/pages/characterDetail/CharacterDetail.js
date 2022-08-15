@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams, useLocation } from 'react-router-dom';
 
-import ContainerPadding from '../ui/containerPadding/ContainerPadding';
+import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import styles from './CharacterDetail.module.scss';
 
 const CharacterDetail = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DisplayContent from '../displayContent/DisplayContent';
+import DisplayContent from '../../components/displayContent/DisplayContent';
 
 const Comics = () => {
   const header = 'MARVEL COMICS';

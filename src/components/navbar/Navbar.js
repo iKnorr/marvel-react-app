@@ -16,25 +16,13 @@ const Navbar = () => {
           <img src={ImageLogo} className={styles.img_logo} alt="logo" />
         </a>
         <div>
-          <NavLink
-            to="/"
-            className={linkIsActive}
-            // className={({ isActive }) => (isActive ? 'link active' : 'link')}
-          >
+          <NavLink to="/" className={linkIsActive}>
             Home
           </NavLink>
-          <NavLink
-            to="/characters"
-            className={linkIsActive}
-            // className={({ isActive }) => (isActive ? 'link active' : 'link')}
-          >
+          <NavLink to="/characters" className={linkIsActive}>
             Characters
           </NavLink>
-          <NavLink
-            to="/comics"
-            className={linkIsActive}
-            // className={({ isActive }) => (isActive ? 'link active' : 'link')}
-          >
+          <NavLink to="/comics" className={linkIsActive}>
             Comics
           </NavLink>
           {/* <NavLink to="/series" className={linkIsActive}>

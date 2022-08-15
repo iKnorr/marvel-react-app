@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import ContainerPadding from '../ui/containerPadding/ContainerPadding';
+import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import styles from './Home.module.scss';
 
 const Home = () => {

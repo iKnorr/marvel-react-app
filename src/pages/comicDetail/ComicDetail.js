@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useParams, useLocation } from 'react-router-dom';
 
-import ContainerPadding from '../ui/containerPadding/ContainerPadding';
+import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 // import Button from '../ui/button/Button';
-import styles from './Comic.module.scss';
+import styles from './ComicDetail.module.scss';
 
 const Comic = () => {
   let params = useParams();

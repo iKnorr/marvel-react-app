@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   padding: 3rem;
   p {
     font-size: 1.2rem;
@@ -10,10 +11,12 @@
 
 .img_character_detail {
   img {
+    border-radius: 50px 100px 50px 100px;
     border: solid 2px goldenrod;
     height: auto;
     width: 400px;
   }
+  margin: 0 0 2rem 0;
 }
 
 .character_info {

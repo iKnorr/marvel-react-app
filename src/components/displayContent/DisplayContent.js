@@ -7,6 +7,7 @@ import SearchBar from '../search/SearchBar';
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 import styles from './DisplayContent.module.scss';
 import useApi from '../../hooks/useApi';
+import Spinner from '../ui/spinner/Spinner';
 
 const DisplayContent = props => {
   const [results, loading, search] = useApi(
@@ -62,7 +63,12 @@ const DisplayContent = props => {
   let content = contentList;
 
   if (loading) {
-    content = <h2 className={styles.loading}>Loading...</h2>;
+    content = (
+      <div>
+        <Spinner />
+        {/* <h2 className={styles.loading}>Loading...</h2>; */}
+      </div>
+    );
   }
 
   return (
