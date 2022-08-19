@@ -10,8 +10,8 @@ import Character from './pages/characterDetail/CharacterDetail';
 import Comics from './pages/comics/Comics';
 import Comic from './pages/comicDetail/ComicDetail';
 import Home from './pages/home/Home';
-// import Series from './components/series/Series';
-// import SeriesComic from './components/SeriesComic/SeriesComic';
+import Series from './components/series/Series';
+import SeriesComic from './components/SeriesComic/SeriesComic';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,8 +24,8 @@ root.render(
           <Route path="/characters/:characterId" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
           <Route path="/comics/:comicsId" element={<Comic />} />
-          {/* <Route path="/series" element={<Series />} />
-          <Route path="/series/:seriesId" element={<SeriesComic />} /> */}
+          <Route path="/series" element={<Series />} />
+          <Route path="/series/:seriesId" element={<SeriesComic />} />
           <Route
             path="*"
             element={

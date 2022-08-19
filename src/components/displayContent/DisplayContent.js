@@ -15,6 +15,8 @@ const DisplayContent = props => {
     props.resultsUrl
   );
 
+  // console.log(results);
+
   let contentList = (
     <div className={styles.error_message}>
       <h2>No Results found</h2>
