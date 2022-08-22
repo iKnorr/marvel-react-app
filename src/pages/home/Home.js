@@ -13,8 +13,9 @@ const Home = () => {
           <h1>MarvelComicDB</h1>
           <p>
             Find all the information about{' '}
-            <Link to="/characters">Characters</Link> and{' '}
-            <Link to="/comics">Comics</Link>
+            <Link to="/characters">Characters</Link>,{' '}
+            <Link to="/comics">Comics</Link> and{' '}
+            <Link to="/series">Comic-Series</Link>
           </p>
         </div>
       </div>

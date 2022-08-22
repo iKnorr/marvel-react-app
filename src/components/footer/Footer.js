@@ -11,9 +11,9 @@ const Footer = () => {
         <Link to="/">Home</Link>
         <Link to="/characters">Character</Link>
         <Link to="/comics">Comics</Link>
-        {/* <Link to="/series">Comic-Series</Link> */}
+        <Link to="/series">Comic-Series</Link>
       </div>
-      Data provided by Marvel. © 2022 MARVEL
+      <div className={styles.data}>Data provided by Marvel. © 2022 MARVEL</div>
     </footer>
   );
 };

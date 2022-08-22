@@ -1,0 +1,47 @@
+.series_detail_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+}
+
+.title {
+  padding: 0 0 2rem 0;
+}
+
+.img_series {
+  // padding: 0 2rem 2rem 0;
+  img {
+    border: solid 2px goldenrod;
+    height: auto;
+    width: 400px;
+  }
+}
+
+.series_info {
+  padding: 0 2rem;
+  width: 400px;
+  li {
+    list-style: none;
+  }
+}
+
+.comics {
+  padding: 0 0 0.6rem 0;
+  font-size: 2rem;
+}
+
+.link_comic {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  &:hover {
+    color: #e5e5e5;
+    text-decoration: underline;
+  }
+}
+
+.links {
+  display: flex;
+  margin: 2rem 0;
+}

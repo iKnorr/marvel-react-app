@@ -35,17 +35,6 @@
 }
 
 .links {
+  display: flex;
   margin: 2rem 0;
-}
-.links a {
-  margin: 0 1rem 0 0;
-  padding: 0.5rem;
-  color: #ffffff;
-  font-size: 1.2rem;
-  text-decoration: none;
-  border: solid 2px goldenrod;
-}
-.links a:hover {
-  border: solid 2px #e5e5e5;
-  color: #e5e5e5;
 }

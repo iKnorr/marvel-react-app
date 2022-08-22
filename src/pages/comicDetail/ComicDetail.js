@@ -6,6 +6,7 @@ import MD5 from 'crypto-js/md5';
 
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import Spinner from '../../components/ui/spinner/Spinner';
+import { marvelLinks } from '../../components/ui/linkDetail/linkDetail';
 import styles from './ComicDetail.module.scss';
 
 const PrivateKey = 'ce49a66e2a5a94deffac5d3cd9ae15a63630adb2';
@@ -35,24 +36,28 @@ const Comic = () => {
     getData();
   }, [params.comicsId]);
 
-  console.log(data);
-  // const creatorsArray = data.creators.items;
+  // console.log(data);
 
-  // const creatorsArray = state.creators.items;
-  // const creators = state.creators.items.map(creator => {
-  //   const role = creator.role[0].toUpperCase() + creator.role.substr(1);
+  // const marvelLinks = data[0].urls.map((url, index) => {
   //   return (
-  //     <div key={creator.name}>
-  //       <h2>{role}</h2>
-  //       <p>{creator.name}</p>
-  //     </div>
+  //     <a
+  //       key={index}
+  //       alt="link_detail"
+  //       rel="noreferrer"
+  //       href={url.url}
+  //       target="_blank"
+  //     >
+  //       {url.type}
+  //     </a>
   //   );
   // });
 
-  let content = (
+  let contentList = (
     <div className={styles.error_message}>
-      <h2>No Results found</h2>
-      <p>Try again</p>
+      {/* <h2>No Results found</h2>
+      <p>
+        Try again by searching for something like Amazing, Spider or Captain
+      </p> */}
     </div>
   );
 
@@ -66,8 +71,8 @@ const Comic = () => {
         </div>
       );
     });
-    content = (
-      <div className={styles.container_comic}>
+    contentList = (
+      <>
         <img
           className={styles.img_comic}
           src={`${data[0].thumbnail.path}/portrait_uncanny.${data[0].thumbnail.extension}`}
@@ -79,36 +84,26 @@ const Comic = () => {
           <p>{new Date(data[0].dates[0].date).toLocaleDateString()}</p>
           {/* <p>{data.dates.date}</p> */}
           <div className={styles.creators}>{creators}</div>
+          <div className={styles.links}>{marvelLinks(data[0].urls)}</div>
         </div>
-      </div>
+      </>
     );
   }
 
+  let content = contentList;
+
   if (loading) {
     content = (
-      <div>
-        <Spinner />
+      <>
+        <Spinner styles={{ marginTop: '5rem' }} />
         {/* <h2 className={styles.loading}>Loading...</h2>; */}
-      </div>
+      </>
     );
   }
 
   return (
     <ContainerPadding>
-      {content}
-      {/* <div className={styles.container_comic}>
-        <img
-        className={styles.img_comic}
-          src={`${state.thumbnail.path}/portrait_uncanny.${state.thumbnail.extension}`}
-          alt="charc_img"
-        ></img>
-        <div className={styles.comic_info_wrapper}>
-          <h1 className={styles.title}>{state.title}</h1>
-          <h2>Published:</h2>
-          <p>{new Date(state.dates[0].date).toLocaleDateString()}</p>
-          <div className={styles.creators}>{creators}</div>
-        </div>
-      </div> */}
+      <div className={styles.container_comic}>{content}</div>
     </ContainerPadding>
   );
 };

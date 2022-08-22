@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 3rem 2rem;
 
   p {
     font-size: 1.2rem;
@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+  width: 400px;
 }
 
 .img_comic {
@@ -29,4 +30,15 @@
 
 .title {
   padding: 0 0 1rem 0;
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+}
+
+.links {
+  display: flex;
+  margin: 2rem 0;
 }
