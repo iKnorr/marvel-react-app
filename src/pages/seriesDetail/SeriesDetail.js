@@ -3,7 +3,8 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
-import { marvelLinks } from '../../components/ui/linkDetail/linkDetail';
+import DescriptionDetail from '../../components/descriptionDetail/DescriptionDetail';
+import { marvelLinks } from '../../components/linkDetail/linkDetail';
 import styles from './SeriesDetail.module.scss';
 
 const SeriesComic = () => {
@@ -49,6 +50,7 @@ const SeriesComic = () => {
         </div>
         <div className={styles.series_info}>
           <h1 className={styles.title}>{state.title}</h1>
+          <DescriptionDetail description={state.description} />
           <h2 className={styles.comics}>Comics</h2>
           {comics}
           {/* {characters} */}

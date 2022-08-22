@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Header from '../ui/header/Header';
+import Header from '../header/Header';
 import SearchBar from '../search/SearchBar';
 import ContainerPadding from '../ui/containerPadding/ContainerPadding';
 import styles from './DisplayContent.module.scss';
@@ -68,7 +68,6 @@ const DisplayContent = props => {
     content = (
       <div>
         <Spinner />
-        {/* <h2 className={styles.loading}>Loading...</h2>; */}
       </div>
     );
   }

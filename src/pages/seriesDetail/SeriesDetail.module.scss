@@ -3,6 +3,9 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 3rem;
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 .title {
@@ -27,7 +30,7 @@
 }
 
 .comics {
-  padding: 0 0 0.6rem 0;
+  padding: 1rem 0 0.6rem 0;
   font-size: 2rem;
 }
 

@@ -6,7 +6,7 @@ import MD5 from 'crypto-js/md5';
 
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import Spinner from '../../components/ui/spinner/Spinner';
-import { marvelLinks } from '../../components/ui/linkDetail/linkDetail';
+import { marvelLinks } from '../../components/linkDetail/linkDetail';
 import styles from './ComicDetail.module.scss';
 
 const PrivateKey = 'ce49a66e2a5a94deffac5d3cd9ae15a63630adb2';
@@ -37,20 +37,6 @@ const Comic = () => {
   }, [params.comicsId]);
 
   // console.log(data);
-
-  // const marvelLinks = data[0].urls.map((url, index) => {
-  //   return (
-  //     <a
-  //       key={index}
-  //       alt="link_detail"
-  //       rel="noreferrer"
-  //       href={url.url}
-  //       target="_blank"
-  //     >
-  //       {url.type}
-  //     </a>
-  //   );
-  // });
 
   let contentList = (
     <div className={styles.error_message}>
