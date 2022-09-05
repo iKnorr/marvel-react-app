@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useGlobalContext } from '../../context';
 
 import DisplayContent from '../../components/displayContent/DisplayContent';
+import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
+import Header from '../../components/header/Header';
+import SearchForm from '../../components/searchForm/SearchForm';
+
+const header = 'MARVEL COMIC-SERIES';
+const detailUrl = '/series?titleStartsWith';
+const imgSize = 'standard_fantastic';
+const defaultDisplay = 'avengers';
+const pageDirectory = '/series/';
+const placeholder = 'Enter a Comic-Series';
 
 const Series = () => {
-  const header = 'MARVEL COMIC-SERIES';
-  const resultsUrl = '/series?titleStartsWith';
-  const imgSize = 'standard_fantastic';
-  const defaultDisplay = 'avengers';
-  const pageDirectory = '/series/';
-  const placeholder = 'Enter a Comic-Series';
+  const { setUrlDetail } = useGlobalContext();
+
+  useEffect(() => {
+    setUrlDetail(detailUrl);
+  }, [setUrlDetail]);
 
   return (
-    <DisplayContent
-      header={header}
-      resultsUrl={resultsUrl}
-      imgSize={imgSize}
-      defaultDisplay={defaultDisplay}
-      pageDirectory={pageDirectory}
-      placeholder={placeholder}
-    ></DisplayContent>
+    <ContainerPadding>
+      <Header header={header} />
+      <SearchForm placeholder="Enter a Comic-Series Title" />
+      <DisplayContent
+        header={header}
+        resultsUrl={detailUrl}
+        imgSize={imgSize}
+        defaultDisplay={defaultDisplay}
+        pageDirectory={pageDirectory}
+        placeholder={placeholder}
+      ></DisplayContent>
+    </ContainerPadding>
   );
 };
 

@@ -81,8 +81,7 @@ const Comic = () => {
   if (loading) {
     content = (
       <>
-        <Spinner styles={{ marginTop: '5rem' }} />
-        {/* <h2 className={styles.loading}>Loading...</h2>; */}
+        <Spinner />
       </>
     );
   }

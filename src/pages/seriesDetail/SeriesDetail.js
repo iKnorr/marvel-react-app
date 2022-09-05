@@ -7,25 +7,25 @@ import DescriptionDetail from '../../components/descriptionDetail/DescriptionDet
 import { marvelLinks } from '../../components/linkDetail/linkDetail';
 import styles from './SeriesDetail.module.scss';
 
-const SeriesComic = () => {
+const SeriesDetail = () => {
   let { state } = useLocation();
   console.log(state);
+
   const getId = string => {
     return string.split('/')[string.split('/').length - 1];
   };
 
-  const comics = state.comics.items.map((item, index) => {
+  console.log(state.id);
+  const comics = state.comics.items.map(({ name, resourceURI }) => {
     return (
-      <ul key={index}>
-        <li>
-          <Link
-            to={`/comics/${getId(item.resourceURI)}`}
-            className={styles.link_comic}
-          >
-            {item.name}
-          </Link>
-        </li>
-      </ul>
+      <li key={name}>
+        <Link
+          to={`/comics/${getId(resourceURI)}`}
+          className={styles.link_comic}
+        >
+          {name}
+        </Link>
+      </li>
     );
   });
 
@@ -52,7 +52,7 @@ const SeriesComic = () => {
           <h1 className={styles.title}>{state.title}</h1>
           <DescriptionDetail description={state.description} />
           <h2 className={styles.comics}>Comics</h2>
-          {comics}
+          <ul>{comics}</ul>
           {/* {characters} */}
           <div className={styles.links}>{marvelLinks(state.urls)}</div>
         </div>
@@ -61,4 +61,4 @@ const SeriesComic = () => {
   );
 };
 
-export default SeriesComic;
+export default SeriesDetail;

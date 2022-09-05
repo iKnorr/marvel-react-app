@@ -6,5 +6,6 @@ export default axios.create({
   baseURL: 'https://gateway.marvel.com/v1/public',
   params: {
     apikey: PublicKey,
+    limit: '10',
   },
 });
