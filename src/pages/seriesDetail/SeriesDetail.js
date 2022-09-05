@@ -51,10 +51,10 @@ const SeriesDetail = () => {
         <div className={styles.series_info}>
           <h1 className={styles.title}>{state.title}</h1>
           <DescriptionDetail description={state.description} />
+          <div className={styles.links}>{marvelLinks(state.urls)}</div>
           <h2 className={styles.comics}>Comics</h2>
           <ul>{comics}</ul>
           {/* {characters} */}
-          <div className={styles.links}>{marvelLinks(state.urls)}</div>
         </div>
       </div>
     </ContainerPadding>

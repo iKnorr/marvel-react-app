@@ -56,12 +56,13 @@ const CharacterDetail = () => {
   if (data.length === 1) {
     content = (
       <>
-        <div className={styles.img_character_detail}>
-          <img
-            alt="img_character"
-            src={`${data[0].thumbnail.path}/portrait_uncanny.${data[0].thumbnail.extension}`}
-          />
-        </div>
+        {/* <div className={styles.img_character_detail}> */}
+        <img
+          className={styles.img_character_detail}
+          alt="img_character"
+          src={`${data[0].thumbnail.path}/portrait_uncanny.${data[0].thumbnail.extension}`}
+        />
+        {/* </div> */}
         <div className={styles.character_info}>
           <h1 className={styles.character_name}>{data[0].name}</h1>
           <DescriptionDetail description={data[0].description} />

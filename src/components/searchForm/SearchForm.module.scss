@@ -17,6 +17,7 @@
 .input {
   background-color: #ffff;
   flex-grow: 2;
+  // border-color: #ed171e;
   border: none;
   height: 3rem;
   border-radius: 0.7rem 0 0 0.7rem;
@@ -24,6 +25,11 @@
   padding: 0 1rem;
   outline: 0;
 }
+
+// .input:focus {
+//   border: solid 1px #ed171e;
+//   border-color: #ed171e;
+// }
 
 .btn_search {
   border: solid 2px #ed171e;

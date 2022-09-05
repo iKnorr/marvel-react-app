@@ -19,7 +19,7 @@ const heroes = [
   'hulk',
   'iron man',
   'deadpool',
-  'spider-man',
+  'thanos',
   'avengers',
   'hawk',
   'thor',
@@ -44,11 +44,13 @@ const AppProvider = ({ children }) => {
 
       const data = response.data.data.results;
       console.log(data);
+
       if (data) {
         setResults(data);
         setLoading(false);
       } else {
         setResults([]);
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -57,6 +59,17 @@ const AppProvider = ({ children }) => {
   }, [searchTerm, urlDetail]);
 
   useEffect(() => {
+    // if (searchTerm && !results.length) {
+    //   fetchResults();
+    // } else {
+    //   const timeoutId = setTimeout(() => {
+    //     fetchResults();
+    //   }, 500);
+
+    //   return () => {
+    //     clearTimeout(timeoutId);
+    //   };
+    // }
     fetchResults();
   }, [searchTerm, urlDetail, fetchResults]);
 

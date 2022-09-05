@@ -27,7 +27,8 @@ const Comic = () => {
           `/comics/${params.comicsId}?ts=${ts}&hash=${hash}`
         );
         // console.log(data);
-        setData(data.data.results);
+        const response = data.data.results;
+        setData(response);
       } catch (err) {
         console.log(err);
       }

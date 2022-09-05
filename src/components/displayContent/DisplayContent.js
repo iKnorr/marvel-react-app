@@ -7,7 +7,7 @@ import Spinner from '../ui/spinner/Spinner';
 import styles from './DisplayContent.module.scss';
 
 const DisplayContent = props => {
-  const { loading, results, setUrlDetail } = useGlobalContext();
+  const { loading, results, searchTerm, setUrlDetail } = useGlobalContext();
 
   useEffect(() => {
     setUrlDetail(props.detailUrl);
@@ -18,7 +18,7 @@ const DisplayContent = props => {
   if (results.length < 1 && !loading) {
     contentList = (
       <div className={styles.error_message}>
-        <h2>No Results found</h2>
+        <h2>No Results found for "{searchTerm}"</h2>
         <p>
           Try again by searching for something like Amazing, Spider or Captain
         </p>

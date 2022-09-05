@@ -2,23 +2,25 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 3rem 2rem;
 
-  padding: 3rem;
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 .img_character_detail {
-  img {
-    border-radius: 50px 100px 50px 100px;
-    border: solid 2px goldenrod;
-    height: auto;
-    width: 400px;
-  }
-  margin: 0 0 2rem 0;
+  height: auto;
+  width: 400px;
+  border-radius: 50px 100px 50px 100px;
+  border: solid 2px goldenrod;
+
+  // margin: 0 0 2rem 0;
 }
 
 .character_info {
   padding: 0 2rem;
-  width: 400px;
+  width: 40%;
 }
 
 .character_name {
