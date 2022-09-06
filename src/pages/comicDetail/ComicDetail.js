@@ -41,10 +41,10 @@ const Comic = () => {
 
   let contentList = (
     <div className={styles.error_message}>
-      {/* <h2>No Results found</h2>
+      <h2>No Results found</h2>
       <p>
         Try again by searching for something like Amazing, Spider or Captain
-      </p> */}
+      </p>
     </div>
   );
 
