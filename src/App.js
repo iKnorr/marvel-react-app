@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
+import Error from './pages/error/Error';
 import Characters from './pages/characters/Characters';
 import Character from './pages/characterDetail/CharacterDetail';
 import Comics from './pages/comics/Comics';
@@ -27,16 +28,7 @@ const App = () => {
           <Route path="/comics/:comicsId" element={<Comic />} />
           <Route path="/series" element={<Series />} />
           <Route path="/series/:seriesId" element={<SeriesComic />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: '5rem' }}>
-                <h1>404 Error 😱</h1>
-                <h1>Page not found</h1>
-              </main>
-            }
-          />
-          {/* </Route> */}
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>
