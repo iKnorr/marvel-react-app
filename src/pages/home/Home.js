@@ -1,14 +1,19 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import styles from './Home.module.scss';
 
 const Home = () => {
   return (
     <ContainerPadding>
-      <div className={styles.container_home}>
+      <motion.div
+        className={styles.container_home}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className={styles.wrapper_header}>
           <h1>MarvelComicDB</h1>
           <p>
@@ -18,7 +23,7 @@ const Home = () => {
             <Link to="/series">Comic-Series</Link>
           </p>
         </div>
-      </div>
+      </motion.div>
     </ContainerPadding>
   );
 };

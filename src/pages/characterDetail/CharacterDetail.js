@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../api';
 import MD5 from 'crypto-js/md5';
+import { motion } from 'framer-motion';
 
 import DescriptionDetail from '../../components/descriptionDetail/DescriptionDetail';
 import Spinner from '../../components/ui/spinner/Spinner';
@@ -76,11 +77,16 @@ const CharacterDetail = () => {
 
   return (
     <ContainerPadding>
-      <div className={styles.container_character}>
+      <motion.div
+        className={styles.container_character}
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {content}
         {/* {!loading && data.length === 1 && content} */}
         {/* {loading && <Spinner />} */}
-      </div>
+      </motion.div>
     </ContainerPadding>
   );
 };

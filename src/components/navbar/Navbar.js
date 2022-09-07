@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { motion } from 'framer-motion';
+import { useIsMedium } from '../../hooks/useMediaQuery';
 
 import ImageLogo from '../../images/marvel_logo.png';
 import styles from './Navbar.module.scss';
@@ -12,6 +14,49 @@ const Navbar = () => {
   const linkIsActive = ({ isActive }) =>
     isActive ? `${styles.active} ${styles.link}` : styles.link;
 
+  const isMedium = useIsMedium();
+
+  const variants = isMedium
+    ? {
+        closed: {
+          opacity: 0,
+          transition: {
+            when: 'afterChildren',
+          },
+        },
+        open: {
+          opacity: 1,
+          transition: {
+            when: 'beforeChildren',
+            staggerChildren: 0.1,
+          },
+        },
+      }
+    : {
+        closed: {
+          opacity: 1,
+          transition: {
+            when: 'afterChildren',
+          },
+        },
+        open: {
+          opacity: 0,
+          transition: {
+            when: 'beforeChildren',
+            staggerChildren: 0.3,
+          },
+        },
+      };
+
+  const item = isMedium
+    ? {
+        closed: { opacity: 0 },
+        open: { opacity: 1 },
+      }
+    : {
+        closed: { opacity: 1 },
+        open: { opacity: 1 },
+      };
   // const navbarActive = ({ isNavExpanded }) =>
   //   isNavExpanded
   //     ? `${styles.navbar_menu} ${styles.navbar_menu.expanded}`
@@ -29,37 +74,33 @@ const Navbar = () => {
         >
           <GiHamburgerMenu />
         </button>
-        <div
+        <motion.div
           className={
             isNavExpanded
               ? `${styles.navbar_menu} ${styles.expanded}`
               : `${styles.navbar_menu}`
           }
+          animate={isNavExpanded ? 'open' : 'closed'}
+          variants={variants}
+          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0 }}
         >
           {/* <div className={isNavExpanded ? 'navbar_menu expanded' : 'navbar_menu'}> */}
           <ul>
-            <li>
-              <NavLink to="/" className={linkIsActive}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/characters" className={linkIsActive}>
-                Characters
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/comics" className={linkIsActive}>
-                Comics
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/series" className={linkIsActive}>
-                Comic-Series
-              </NavLink>
-            </li>
+            <NavLink to="/" className={linkIsActive}>
+              <motion.li variants={item}>Home</motion.li>
+            </NavLink>
+            <NavLink to="/characters" className={linkIsActive}>
+              <motion.li variants={item}>Characters</motion.li>
+            </NavLink>
+            <NavLink to="/comics" className={linkIsActive}>
+              <motion.li variants={item}>Comics</motion.li>
+            </NavLink>
+            <NavLink to="/series" className={linkIsActive}>
+              <motion.li variants={item}>Comic-Series</motion.li>
+            </NavLink>
           </ul>
-        </div>
+        </motion.div>
       </nav>
     </>
   );
