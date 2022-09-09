@@ -10,7 +10,8 @@
 }
 
 .img_character_detail {
-  height: auto;
+  // height: auto;
+  max-height: 600px;
   width: 400px;
   border-radius: 50px 100px 50px 100px;
   border: solid 2px goldenrod;
@@ -21,6 +22,9 @@
 .character_info {
   padding: 0 2rem;
   width: 40%;
+  li {
+    list-style: none;
+  }
 }
 
 .character_name {
@@ -31,6 +35,21 @@
 .links {
   display: flex;
   margin: 2rem 0;
+}
+
+.comics {
+  padding: 1rem 0 0.6rem 0;
+  font-size: 2rem;
+}
+
+.link_comic {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  &:hover {
+    color: #e5e5e5;
+    text-decoration: underline;
+  }
 }
 
 @media screen and (max-width: 768px) {

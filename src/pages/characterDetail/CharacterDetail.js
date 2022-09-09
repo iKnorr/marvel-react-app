@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import api from '../../api';
 import MD5 from 'crypto-js/md5';
 import { motion } from 'framer-motion';
@@ -41,6 +41,27 @@ const CharacterDetail = () => {
     getData();
   }, [characterId]);
 
+  const getId = string => {
+    return string.split('/')[string.split('/').length - 1];
+  };
+
+  let comics;
+
+  if (data.length === 1) {
+    comics = data[0].comics.items.map(({ name, resourceURI }) => {
+      return (
+        <li key={name}>
+          <Link
+            to={`/comics/${getId(resourceURI)}`}
+            className={styles.link_comic}
+          >
+            {name}
+          </Link>
+        </li>
+      );
+    });
+  }
+
   if (loading) {
     return <Spinner />;
   }
@@ -57,19 +78,17 @@ const CharacterDetail = () => {
   if (data.length === 1) {
     content = (
       <>
-        {/* <div className={styles.img_character_detail}> */}
         <img
           className={styles.img_character_detail}
           alt="img_character"
           src={`${data[0].thumbnail.path}/portrait_uncanny.${data[0].thumbnail.extension}`}
         />
-        {/* </div> */}
         <div className={styles.character_info}>
           <h1 className={styles.character_name}>{data[0].name}</h1>
           <DescriptionDetail description={data[0].description} />
-          {/* <h2>Comic apperances</h2> */}
-          {/* {charList} */}
           <div className={styles.links}>{marvelLinks(data[0].urls)}</div>
+          <h2 className={styles.comics}>Comics</h2>
+          <ul>{comics}</ul>
         </div>
       </>
     );

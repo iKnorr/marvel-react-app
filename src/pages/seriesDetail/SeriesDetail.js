@@ -10,13 +10,13 @@ import { motion } from 'framer-motion';
 
 const SeriesDetail = () => {
   let { state } = useLocation();
-  console.log(state);
+  // console.log(state);
 
   const getId = string => {
     return string.split('/')[string.split('/').length - 1];
   };
 
-  console.log(state.id);
+  // console.log(state.id);
   const comics = state.comics.items.map(({ name, resourceURI }) => {
     return (
       <li key={name}>
