@@ -12,7 +12,7 @@ const Home = () => {
         className={styles.container_home}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.7 }}
       >
         <div className={styles.wrapper_header}>
           <h1>MarvelComicDB</h1>

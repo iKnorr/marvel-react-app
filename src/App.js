@@ -12,6 +12,7 @@ import Series from './pages/series/Series';
 import SeriesComic from './pages/seriesDetail/SeriesDetail';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+
 import styles from './App.module.scss';
 
 const App = () => {
@@ -21,7 +22,6 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route index element={<Home />} /> */}
           <Route path="/characters/" element={<Characters />}></Route>
           <Route path="/characters/:characterId" element={<Character />} />
           <Route path="/comics" element={<Comics />} />

@@ -9,12 +9,19 @@ font-family: 'Roboto', sans-serif; */
 }
 
 body {
-  color: white;
   font-family: 'Barlow Condensed', sans-serif;
-  /* height: 100vh; */
+  // height: 100vh;
   background-color: #141414;
   /* background-image: url("/src/images/marvel-comics.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: white;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
 }

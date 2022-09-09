@@ -48,3 +48,18 @@
   display: flex;
   margin: 2rem 0;
 }
+
+@media screen and (max-width: 768px) {
+  .series_detail_container {
+    padding: 3rem 0rem;
+  }
+  .series_info {
+    padding: 3rem 2rem;
+  }
+
+  .img_series {
+    img {
+      width: 100%;
+    }
+  }
+}

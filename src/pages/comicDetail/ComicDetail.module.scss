@@ -42,3 +42,9 @@
   display: flex;
   margin: 2rem 0;
 }
+
+@media screen and (max-width: 768px) {
+  .comic_info_wrapper {
+    padding: 2rem 0;
+  }
+}

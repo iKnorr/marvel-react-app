@@ -6,6 +6,7 @@ import DisplayContent from '../../components/displayContent/DisplayContent';
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import Header from '../../components/header/Header';
 import SearchForm from '../../components/searchForm/SearchForm';
+import { motion } from 'framer-motion';
 
 const Comics = () => {
   const { setUrlDetail } = useGlobalContext();
@@ -25,16 +26,22 @@ const Comics = () => {
 
   return (
     <ContainerPadding>
-      <Header header={header} />
-      <SearchForm placeholder="Enter a Comic Title" />
-      <DisplayContent
-        header={header}
-        resultsUrl={resultsUrl}
-        imgSize={imgSize}
-        defaultDisplay={defaultDisplay}
-        pageDirectory={pageDirectory}
-        placeholder={placeholder}
-      ></DisplayContent>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Header header={header} />
+        <SearchForm placeholder="Enter a Comic Title" />
+        <DisplayContent
+          header={header}
+          resultsUrl={resultsUrl}
+          imgSize={imgSize}
+          defaultDisplay={defaultDisplay}
+          pageDirectory={pageDirectory}
+          placeholder={placeholder}
+        ></DisplayContent>
+      </motion.div>
     </ContainerPadding>
   );
 };

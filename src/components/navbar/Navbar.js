@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -10,12 +10,29 @@ import styles from './Navbar.module.scss';
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const ref = useRef();
 
+  // Custom hook: check if window size has certain size
+  const isMedium = useIsMedium();
+
+  // Check for which page is active
   const linkIsActive = ({ isActive }) =>
     isActive ? `${styles.active} ${styles.link}` : styles.link;
 
-  const isMedium = useIsMedium();
+  // Close dropdown on click on other elements
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (isNavExpanded && ref.current && !ref.current.contains(e.target)) {
+        setIsNavExpanded(false);
+      }
+    };
+    document.addEventListener('mousedown', checkIfClickedOutside);
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [isNavExpanded]);
 
+  // Variants for motion animation
   const variants = isMedium
     ? {
         closed: {
@@ -35,16 +52,9 @@ const Navbar = () => {
     : {
         closed: {
           opacity: 1,
-          transition: {
-            when: 'afterChildren',
-          },
         },
         open: {
-          opacity: 0,
-          transition: {
-            when: 'beforeChildren',
-            staggerChildren: 0.3,
-          },
+          opacity: 1,
         },
       };
 
@@ -57,10 +67,6 @@ const Navbar = () => {
         closed: { opacity: 1 },
         open: { opacity: 1 },
       };
-  // const navbarActive = ({ isNavExpanded }) =>
-  //   isNavExpanded
-  //     ? `${styles.navbar_menu} ${styles.navbar_menu.expanded}`
-  //     : styles.navbar_menu;
 
   return (
     <>
@@ -68,39 +74,39 @@ const Navbar = () => {
         <a href="https://www.marvel.com/" target="_blank" rel="noreferrer">
           <img src={ImageLogo} className={styles.img_logo} alt="logo" />
         </a>
-        <button
-          className={styles.hamburger}
-          onClick={() => setIsNavExpanded(!isNavExpanded)}
-        >
-          <GiHamburgerMenu />
-        </button>
-        <motion.div
-          className={
-            isNavExpanded
-              ? `${styles.navbar_menu} ${styles.expanded}`
-              : `${styles.navbar_menu}`
-          }
-          animate={isNavExpanded ? 'open' : 'closed'}
-          variants={variants}
-          transition={{ duration: 0.3 }}
-          exit={{ opacity: 0 }}
-        >
-          {/* <div className={isNavExpanded ? 'navbar_menu expanded' : 'navbar_menu'}> */}
-          <ul>
-            <NavLink to="/" className={linkIsActive}>
-              <motion.li variants={item}>Home</motion.li>
-            </NavLink>
-            <NavLink to="/characters" className={linkIsActive}>
-              <motion.li variants={item}>Characters</motion.li>
-            </NavLink>
-            <NavLink to="/comics" className={linkIsActive}>
-              <motion.li variants={item}>Comics</motion.li>
-            </NavLink>
-            <NavLink to="/series" className={linkIsActive}>
-              <motion.li variants={item}>Comic-Series</motion.li>
-            </NavLink>
-          </ul>
-        </motion.div>
+        <div className={styles.nav_wrapper} ref={ref}>
+          <button
+            className={styles.hamburger}
+            onClick={() => setIsNavExpanded(!isNavExpanded)}
+          >
+            <GiHamburgerMenu />
+          </button>
+          <motion.div
+            className={
+              isNavExpanded
+                ? `${styles.navbar_menu} ${styles.expanded}`
+                : `${styles.navbar_menu}`
+            }
+            animate={isNavExpanded ? 'open' : 'closed'}
+            variants={variants}
+            transition={{ duration: 0.3 }}
+          >
+            <ul>
+              <NavLink to="/" className={linkIsActive}>
+                <motion.li variants={item}>Home</motion.li>
+              </NavLink>
+              <NavLink to="/characters" className={linkIsActive}>
+                <motion.li variants={item}>Characters</motion.li>
+              </NavLink>
+              <NavLink to="/comics" className={linkIsActive}>
+                <motion.li variants={item}>Comics</motion.li>
+              </NavLink>
+              <NavLink to="/series" className={linkIsActive}>
+                <motion.li variants={item}>Comic-Series</motion.li>
+              </NavLink>
+            </ul>
+          </motion.div>
+        </div>
       </nav>
     </>
   );

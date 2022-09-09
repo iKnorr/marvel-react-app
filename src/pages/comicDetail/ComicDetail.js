@@ -8,6 +8,7 @@ import ContainerPadding from '../../components/ui/containerPadding/ContainerPadd
 import Spinner from '../../components/ui/spinner/Spinner';
 import { marvelLinks } from '../../components/linkDetail/linkDetail';
 import styles from './ComicDetail.module.scss';
+import { motion } from 'framer-motion';
 
 const PrivateKey = 'ce49a66e2a5a94deffac5d3cd9ae15a63630adb2';
 const PublicKey = 'b37388fcfae95bf1869fe48184712196';
@@ -89,7 +90,14 @@ const Comic = () => {
 
   return (
     <ContainerPadding>
-      <div className={styles.container_comic}>{content}</div>
+      <motion.div
+        className={styles.container_comic}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        {content}
+      </motion.div>
     </ContainerPadding>
   );
 };

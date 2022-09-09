@@ -6,6 +6,7 @@ import DisplayContent from '../../components/displayContent/DisplayContent';
 import ContainerPadding from '../../components/ui/containerPadding/ContainerPadding';
 import Header from '../../components/header/Header';
 import SearchForm from '../../components/searchForm/SearchForm';
+import { motion } from 'framer-motion';
 
 const header = 'MARVEL CHARACTERS';
 const detailUrl = '/characters?nameStartsWith';
@@ -23,21 +24,27 @@ const Characters = () => {
 
   return (
     <ContainerPadding>
-      <Header header={header} />
-      <SearchForm placeholder="Enter a Character's Name" />
-      {/* {!loading && results.length > 0 && contentList}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Header header={header} />
+        <SearchForm placeholder="Enter a Character's Name" />
+        {/* {!loading && results.length > 0 && contentList}
       {!loading && results.length < 1 && error}
-      {loading && <Spinner />} */}
+    {loading && <Spinner />} */}
 
-      <DisplayContent
-        detailUrl={detailUrl}
-        header={header}
-        resultsUrl={detailUrl}
-        imgSize={imgSize}
-        defaultDisplay={defaultDisplay}
-        pageDirectory={pageDirectory}
-        placeholder={placeholder}
-      ></DisplayContent>
+        <DisplayContent
+          detailUrl={detailUrl}
+          header={header}
+          resultsUrl={detailUrl}
+          imgSize={imgSize}
+          defaultDisplay={defaultDisplay}
+          pageDirectory={pageDirectory}
+          placeholder={placeholder}
+        ></DisplayContent>
+      </motion.div>
     </ContainerPadding>
   );
 };

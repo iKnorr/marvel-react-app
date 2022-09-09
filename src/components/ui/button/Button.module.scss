@@ -1,11 +1,14 @@
 .btn {
-  background-color: #ed171e;
-  // padding: 0.7rem 2rem;
-  height: 3rem;
-  width: 5rem;
-  border-radius: 0.7rem;
-  color: #ffffff;
-  font-size: 1rem;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  color: #141414;
+  font-size: 1.1rem;
   font-weight: bold;
   border: none;
+}
+
+.btn:hover {
+  background-color: #ed171e;
+  color: #ffffff;
 }

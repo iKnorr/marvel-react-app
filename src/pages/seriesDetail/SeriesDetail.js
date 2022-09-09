@@ -6,6 +6,7 @@ import ContainerPadding from '../../components/ui/containerPadding/ContainerPadd
 import DescriptionDetail from '../../components/descriptionDetail/DescriptionDetail';
 import { marvelLinks } from '../../components/linkDetail/linkDetail';
 import styles from './SeriesDetail.module.scss';
+import { motion } from 'framer-motion';
 
 const SeriesDetail = () => {
   let { state } = useLocation();
@@ -41,7 +42,12 @@ const SeriesDetail = () => {
 
   return (
     <ContainerPadding>
-      <div className={styles.series_detail_container}>
+      <motion.div
+        className={styles.series_detail_container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className={styles.img_series}>
           <img
             alt="img_comic-series"
@@ -56,7 +62,7 @@ const SeriesDetail = () => {
           <ul>{comics}</ul>
           {/* {characters} */}
         </div>
-      </div>
+      </motion.div>
     </ContainerPadding>
   );
 };
