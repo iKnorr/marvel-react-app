@@ -30,7 +30,7 @@ const Characters = () => {
         transition={{ duration: 0.7 }}
       >
         <Header header={header} />
-        <SearchForm placeholder="Enter a Character's Name" />
+        <SearchForm placeholder="Enter a Name" />
         {/* {!loading && results.length > 0 && contentList}
       {!loading && results.length < 1 && error}
     {loading && <Spinner />} */}
