@@ -23,7 +23,7 @@ const SearchForm = props => {
         <input
           className={styles.input}
           type="text"
-          autoFocus
+          // autoFocus
           ref={searchValue}
           onChange={searchContent}
           placeholder={props.placeholder}
