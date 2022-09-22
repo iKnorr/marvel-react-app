@@ -14,6 +14,7 @@ const Comics = () => {
   const detailUrl = '/comics?titleStartsWith';
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrlDetail(detailUrl);
   }, [setUrlDetail]);
 

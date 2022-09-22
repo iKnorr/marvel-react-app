@@ -19,6 +19,7 @@ const Series = () => {
   const { setUrlDetail } = useGlobalContext();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrlDetail(detailUrl);
   }, [setUrlDetail]);
 

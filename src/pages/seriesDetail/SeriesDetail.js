@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useLocation, Link } from 'react-router-dom';
 
@@ -11,6 +11,9 @@ import { motion } from 'framer-motion';
 const SeriesDetail = () => {
   let { state } = useLocation();
   // console.log(state);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const getId = string => {
     return string.split('/')[string.split('/').length - 1];

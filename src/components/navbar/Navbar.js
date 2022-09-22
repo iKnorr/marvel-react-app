@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { FaTimes } from 'react-icons/fa';
+
 import { motion } from 'framer-motion';
 import { useIsMedium } from '../../hooks/useMediaQuery';
 
@@ -19,7 +21,7 @@ const Navbar = () => {
   const linkIsActive = ({ isActive }) =>
     isActive ? `${styles.active} ${styles.link}` : styles.link;
 
-  // Close dropdown on click on other elements
+  // Close dropdown on click
   useEffect(() => {
     const checkIfClickedOutside = e => {
       if (isNavExpanded && ref.current && !ref.current.contains(e.target)) {
@@ -79,7 +81,7 @@ const Navbar = () => {
             className={styles.hamburger}
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           >
-            <GiHamburgerMenu />
+            {isNavExpanded ? <FaTimes /> : <GiHamburgerMenu />}
           </button>
           <motion.div
             className={
@@ -92,16 +94,32 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <ul>
-              <NavLink to="/" className={linkIsActive}>
+              <NavLink
+                to="/"
+                className={linkIsActive}
+                onClick={() => setIsNavExpanded(false)}
+              >
                 <motion.li variants={item}>Home</motion.li>
               </NavLink>
-              <NavLink to="/characters" className={linkIsActive}>
+              <NavLink
+                to="/characters"
+                className={linkIsActive}
+                onClick={() => setIsNavExpanded(false)}
+              >
                 <motion.li variants={item}>Characters</motion.li>
               </NavLink>
-              <NavLink to="/comics" className={linkIsActive}>
+              <NavLink
+                to="/comics"
+                className={linkIsActive}
+                onClick={() => setIsNavExpanded(false)}
+              >
                 <motion.li variants={item}>Comics</motion.li>
               </NavLink>
-              <NavLink to="/series" className={linkIsActive}>
+              <NavLink
+                to="/series"
+                className={linkIsActive}
+                onClick={() => setIsNavExpanded(false)}
+              >
                 <motion.li variants={item}>Comic-Series</motion.li>
               </NavLink>
             </ul>

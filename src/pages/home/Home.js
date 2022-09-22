@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -6,6 +6,10 @@ import ContainerPadding from '../../components/ui/containerPadding/ContainerPadd
 import styles from './Home.module.scss';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ContainerPadding>
       <motion.div

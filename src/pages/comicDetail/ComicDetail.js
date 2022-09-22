@@ -21,6 +21,7 @@ const Comic = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getData = async () => {
       try {
         setLoading(true);
