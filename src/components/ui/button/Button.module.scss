@@ -1,14 +1,17 @@
+@import '../../../vars.scss';
+
 .btn {
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: $base-white;
   padding: 0.6rem 1.5rem;
-  color: #141414;
+  color: $dark-black;
   font-size: 1.1rem;
   font-weight: bold;
   border: none;
-}
-
-.btn:hover {
-  background-color: #ed171e;
-  color: #ffffff;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: $base-red;
+    color: $base-white;
+  }
 }

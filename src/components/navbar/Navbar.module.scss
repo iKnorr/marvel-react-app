@@ -1,10 +1,12 @@
+@import '../../vars.scss';
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: #0e0e0e;
+  background-color: $base-black;
   height: 4rem;
   z-index: 100;
 }
@@ -19,13 +21,13 @@
 }
 
 .link {
-  color: #e5e5e5;
+  color: $dark-white;
   text-decoration: none;
   font-size: 1.3rem;
 }
 
 .active {
-  color: #ffffff;
+  color: $base-white;
   text-decoration: underline;
   // margin: 1rem;
   // text-decoration: none;
@@ -43,7 +45,7 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: $base-white;
   font-size: 1.5rem;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -54,14 +56,15 @@
   display: none;
 }
 .hamburger:hover {
-  background-color: #ed171e;
-  color: #ffffff;
+  background-color: $base-red;
+  color: $base-white;
 }
 
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
   }
+
   .navbar_menu ul {
     display: none;
     position: absolute;
@@ -69,8 +72,7 @@
     left: 0;
     flex-direction: column;
     width: 100%;
-    background-color: #0e0e0e;
-    opacity: 0.9;
+    background-color: rgba($color: $base-black, $alpha: 0.8);
   }
 
   .navbar_menu li {
@@ -80,12 +82,12 @@
   }
 
   .navbar_menu li a {
-    color: white;
+    color: $base-white;
     width: 100%;
     padding: 1.5rem 0;
   }
   .navbar_menu li:hover {
-    background-color: #3e3e3e;
+    background-color: $light-black;
   }
 
   .navbar_menu.expanded ul {

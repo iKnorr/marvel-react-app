@@ -1,3 +1,5 @@
+@import '../../vars.scss';
+
 .series_detail_container {
   display: flex;
   justify-content: center;
@@ -15,7 +17,7 @@
 .img_series {
   // padding: 0 2rem 2rem 0;
   img {
-    border: solid 2px goldenrod;
+    border: solid 2px $base-gold;
     height: auto;
     width: 400px;
   }
@@ -35,11 +37,11 @@
 }
 
 .link_comic {
-  color: #ffffff;
+  color: $base-white;
   text-decoration: none;
   font-size: 1.2rem;
   &:hover {
-    color: #e5e5e5;
+    color: $dark-white;
     text-decoration: underline;
   }
 }

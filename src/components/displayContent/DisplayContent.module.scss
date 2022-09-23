@@ -1,3 +1,5 @@
+@import '../../vars.scss';
+
 .main_container {
   display: grid;
   grid-gap: 20px;
@@ -26,7 +28,7 @@
 }
 
 .img_comic img {
-  border: solid 2px goldenrod;
+  border: solid 2px $base-gold;
   transition: ease-in-out 0.3s;
   &:hover {
     transform: translateY(-20px);
@@ -42,10 +44,10 @@
   flex-direction: column;
   margin: 1rem;
   // box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-  box-shadow: 0px 0px 10px goldenrod;
+  box-shadow: 0px 0px 10px $base-gold;
   border-radius: 50%;
   overflow: hidden;
-  border: solid 2px goldenrod;
+  border: solid 2px $base-gold;
 }
 
 .img_result img {
@@ -60,11 +62,11 @@
   margin: 2rem;
   // font-family: 'Bangers', cursive;
   text-align: center;
-  color: #ffffff;
+  color: $base-white;
   font-size: 2rem;
   text-shadow: 7px 1px 4px rgba(0, 0, 0, 0.8);
   &:hover {
-    color: #e5e5e5;
+    color: $dark-white;
   }
 }
 
@@ -72,7 +74,7 @@
   text-align: center;
   h2 {
     font-size: 3rem;
-    color: #ed171e;
+    color: $base-red;
   }
   p {
     font-size: 1.6rem;

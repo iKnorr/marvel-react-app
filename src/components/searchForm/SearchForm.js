@@ -20,6 +20,9 @@ const SearchForm = props => {
   return (
     <div className={styles.search_bar}>
       <form className={styles.form} onSubmit={submitHandler}>
+        <button className={styles.btn_search}>
+          <FaSearch />
+        </button>
         <input
           className={styles.input}
           type="text"
@@ -28,9 +31,6 @@ const SearchForm = props => {
           onChange={searchContent}
           placeholder={props.placeholder}
         />
-        <button className={styles.btn_search}>
-          <FaSearch />
-        </button>
       </form>
     </div>
   );

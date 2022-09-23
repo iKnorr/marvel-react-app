@@ -1,3 +1,5 @@
+@import '../../../vars.scss';
+
 .container_spinner {
   position: absolute;
   top: 50%;
@@ -9,8 +11,8 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  border: solid 0.5rem #ffffff;
-  border-bottom-color: #ed171e;
+  border: solid 0.5rem $base-white;
+  border-bottom-color: $base-red;
   animation: rotation 1s linear infinite;
 }
 

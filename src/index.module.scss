@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
-/* font-family: 'Barlow Condensed', sans-serif;
-font-family: 'Bangers', cursive;
-font-family: 'Roboto', sans-serif; */
+@import './vars.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +10,12 @@ font-family: 'Roboto', sans-serif; */
 body {
   font-family: 'Barlow Condensed', sans-serif;
   // height: 100vh;
-  background-color: #141414;
+  background-color: $base-black;
   /* background-image: url("/src/images/marvel-comics.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: white;
+  color: $base-white;
 }
 
 #root {
