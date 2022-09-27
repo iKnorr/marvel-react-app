@@ -43,7 +43,7 @@ const AppProvider = ({ children }) => {
       );
 
       const data = response.data.data.results;
-      console.log(data);
+      // console.log(data);
 
       if (data) {
         setResults(data);

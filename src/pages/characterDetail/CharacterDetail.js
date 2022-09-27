@@ -32,7 +32,7 @@ const CharacterDetail = () => {
         );
         const result = data.data.results;
 
-        console.log(result);
+        // console.log(result);
         setData(result);
       } catch (err) {
         console.log(err);
